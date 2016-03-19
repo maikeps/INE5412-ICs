@@ -35,7 +35,7 @@ int main ()
    }
 
    /* if this is the parent-process then */
-   // if(pid > 0){
+   // Todos os filhos dão exit logo depois de serem criados, não é necessario colocar um if aqui
    int errno, status, sum = 0;
    /* Parent-process waits for all children to exit, adding each status to the sum variable */
    for(int i = 0; i < numChilds; i++){
@@ -47,7 +47,6 @@ int main ()
       }
    }
    cout << "Parent process " << getpid() << ": Exiting with sum " << sum << endl;
-   // }
    /*  */
    return count;
 }
